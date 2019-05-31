@@ -1,0 +1,206 @@
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+    <link href="config.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="datas.js"></script>
+    <script type="text/javascript" src="melange.js"></script>
+</head>
+<body onLoad="ChargerDatas()">
+<table cellspacing="0" cellpadding="5">
+    
+    <tr>
+        <td colspan="4"><b>Potion 1</b></td>
+        <td colspan="2"><span title="1 pour 1 sauf : Jus de chronometre (-30 temps), Métomol (-2 ARM, -10 temps), guerison (-2PV)"><b>Puissance</b></td></span>
+        <td colspan="2"><span title="Votre potion est elle mélangée ? (exemple : Bonne bouffe mélangée)"><b>Potion mélangée ?</b></td></span>
+		<td colspan="5"><b>Potion bidouillée ?</b></td>
+    </tr>
+    <tr>
+        <td colspan="4"><span title="Choisisez une potion dans le menu déroulant.">
+            <select id="potion_1" onchange="ModificationPotion(1)">
+                <option value="">== Choisir une potion ==
+            </select>
+        </td>
+        <td colspan="2"><span title="1 pour 1 sauf : Jus de chronometre (-30 temps), Métomol (-2 ARM, -10 temps), guerison (-2PV)"><input type="text" id="puissance_1" value="1" size="3" maxlength = "2"  onchange="ModificationPotion(1)" /></td></span>
+        <td colspan="2"><span title="Votre potion est elle mélangée ? (exemple : Bonne bouffe mélangée)"><center><input type="checkbox" id="melangee_1"  onclick="TotalPotion(1)" /></center></td>
+        <td><center><input type="checkbox" id="bidouillee_1" onclick="TotalPotion(1)" /></center></td>
+        <td colspan="4"><input type="text" id="bidouille_1" value="" size="40" onchange="TotalPotion(1)" /></td>
+    </tr>
+    <tr>
+        <td><b>ATT</b></td>
+        <td><b>ESQ</b></td>
+        <td><b>DEG</b></td>
+        <td><b>REG</b></td>
+        <td><b>VUE</b></td>
+        <td><b>PV</b></td>
+        <td><b>ARM</b></td>
+        <td><b>RM</b></td>
+        <td><b>MM</b></td>
+        <td><b>TEMPS</b></td>
+        <td><span title="la case se coche automatiquement si vous avez selectionné une potion de zone dans le menu déroulant"><b>ZONE</b></td>
+		<td><span title="la case se coche automatiquement si vous avez selectionné Potion de Painthure dans le menu déroulant"><b>PAINTHURE</b></td>
+		<td><center>LVL<center></td>
+        <td><center><b>DUREE</b></center></td>
+        <td><b>TOTAL</b></td></center>
+    </tr>
+    <tr>
+	   
+        <td><input type="text" id="attaque_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></td>
+        <td><input type="text" id="esquive_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></td>
+        <td><input type="text" id="degats_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></td>
+        <td><input type="text" id="regeneration_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></td>
+        <td><input type="text" id="vue_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></td>
+        <td><input type="text" id="pvs_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></td>
+        <td><input type="text" id="armure_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></td>
+        <td><input type="text" id="rm_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></td>
+		<td><input type="text" id="mm_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></td>
+        <td><input type="text" id="temps_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></td>
+        <td><span title="la case se coche automatiquement si vous avez selectionné Potion de Zone dans le menu déroulant"><center><input type="checkbox" id="zone_1" onchange="TotalPotion(1)" /></center></td>
+		<td><span title="la case se coche automatiquement si vous avez selectionné Potion de Painthure dans le menu déroulant"><center><input type="checkbox" id="painthure_1" onchange="TotalPotion(1)" /></center></td>
+		<td><center><span title="entrez ici le niveau de votre Painthure"><input type="text" id="casecachee_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></center></td>
+		<td><center><input type="text" id="duree_1" value="" size="3" maxlength="4" onchange="TotalPotion(1)" /></center></td>
+        <td><span title="Total des malus apportés par le niveau de la potion"><pre id="total_1">&nbsp;</pre></td>
+		
+    </tr>
+    
+        <td colspan="4"><b>Potion 2</b></td>
+        <td colspan="2"><b>Puissance</b></td>
+        <td colspan="2"><b>Potion mélangée ?</b></td>
+        <td colspan="5"><b>Potion bidouillée ?</b></td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <select id="potion_2" onchange="ModificationPotion(2)">
+                <option value="">== Choisir une potion ==
+            </select>
+        </td>
+        <td colspan="2"><input type="text" id="puissance_2" value="1" size="3" maxlength = "2"  onchange="ModificationPotion(2)" /></td>
+        <td colspan="2"><center><input type="checkbox" id="melangee_2"  onclick="TotalPotion(2)" /></center></td>
+        <td><center><input type="checkbox" id="bidouillee_2" onclick="TotalPotion(2)" /></center></td>
+        <td colspan="4"><input type="text" id="bidouille_2" value="" size="40" onchange="TotalPotion(2)" /></td>
+    </tr>
+    <tr>
+        <td><b>ATT</b></td>
+        <td><b>ESQ</b></td>
+        <td><b>DEG</b></td>
+        <td><b>REG</b></td>
+        <td><b>VUE</b></td>
+        <td><b>PV</b></td>
+        <td><b>ARM</b></td>
+        <td><b>RM</b></td>
+        <td><b>MM</b></td>
+        <td><b>TEMPS</b></td>
+        <td><b>ZONE</b></td>
+		<td><b>PAINTHURE</b></td>
+		<td><center>LVL<center></td>
+        <td><b>DUREE</b></td>
+        <td><b>TOTAL</b></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="attaque_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></td>
+        <td><input type="text" id="esquive_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></td>
+        <td><input type="text" id="degats_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></td>
+        <td><input type="text" id="regeneration_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></td>
+        <td><input type="text" id="vue_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></td>
+        <td><input type="text" id="pvs_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></td>
+        <td><input type="text" id="armure_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></td>
+        <td><input type="text" id="rm_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></td>
+        <td><input type="text" id="mm_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></td>
+        <td><input type="text" id="temps_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></td>
+        <td><center><input type="checkbox" id="zone_2" onchange="TotalPotion(2)" /></center></td>
+		<td><center><input type="checkbox" id="painthure_2" onchange="TotalPotion(2)" /></center></td>
+		<td><center><input type="text" id="casecachee_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></center></td>
+        <td><center><input type="text" id="duree_2" value="" size="3" maxlength="4" onchange="TotalPotion(2)" /></center></td>
+        <td><pre id="total_2">&nbsp;</pre></td>
+    </tr>
+    
+        <td colspan="2">Composant</td>
+        <td colspan="5">
+            <select id="puissance_3">
+                <option value="">== Choisir un monstre ==
+            </select>
+        </td>
+        <td colspan="3">Qualité</td>
+        <td colspan="5">
+            <select id="qualite_3">
+                <option value="">== Choisir une qualité ==
+                <option value="Très Mauvaise">Très Mauvaise
+                <option value="Mauvaise">Mauvaise
+                <option value="Moyenne">Moyenne
+                <option value="Bonne">Bonne
+                <option value="Très Bonne">Très Bonne
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">Risque d'explosion</td>
+        <td colspan="2"><input type="text" id="resultat" value="" size="3" /></td>
+        <td colspan="3"><input type="button" id="bouton" value="Calculer" onClick="Calculer()" /></td>
+        <td colspan="3">Risque maximum souhaité</td>
+		<td colspan="5"><input type="text" id="risque_maxi" value="15" size="3" /></td>
+    </tr>
+    
+        <td colspan="6"><b><h2>Potion obtenue : </h2></b></td>
+        <td colspan="7"><b><pre id="potion_3">&nbsp;</pre></b></td>
+    </tr>
+    <tr>
+        <td><b>ATT</b></td>
+        <td><b>ESQ</b></td>
+        <td><b>DEG</b></td>
+        <td><b>REG</b></td>
+        <td><b>VUE</b></td>
+        <td><b>PV</b></td>
+        <td><b>ARM</b></td>
+        <td><b>RM</b></td>
+        <td><b>MM</b></td>
+        <td><b>TEMPS</b></td>
+        <td><b>ZONE</b></td>
+        <td><b>DUREE</b></td>
+		<td><b>PAINTHURE</b></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td><pre id="attaque_3">&nbsp;</pre></td>
+        <td><pre id="esquive_3">&nbsp;</pre></td>
+        <td><pre id="degats_3">&nbsp;</pre></td>
+        <td><pre id="regeneration_3">&nbsp;</pre></td>
+        <td><pre id="vue_3">&nbsp;</pre></td>
+        <td><pre id="pvs_3">&nbsp;</pre></td>
+        <td><pre id="armure_3">&nbsp;</pre></td>
+        <td><pre id="rm_3">&nbsp;</pre></td>
+        <td><pre id="mm_3">&nbsp;</pre></td>
+        <td><pre id="temps_3">&nbsp;</pre></td>
+        <td><pre id="zone_3">&nbsp;</pre></td>
+        <td><pre id="duree_3">&nbsp;</pre></td>
+		<td><pre id="painthure_3">&nbsp;</pre></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="5">Explications du calcul</td>
+        <td colspan="8"><pre id="explications">&nbsp;</pre></td>
+    </tr>
+    <tr>
+        <td colspan="5">Composants intéressants</td>
+        <td colspan="8"><pre id="composants">&nbsp;</pre></td>
+    </tr>
+</table>
+
+<quote>
+<b>Notes :</b>
+<br/>- Cette outil est une quasi copie conforme du site de <a href="http://bazobug.free.fr/">de Manfort</a> 
+<br/>- La base de donnée des monstres a été actualisée par cageux en 2017 (Mise a jour des niveaux, ajout nouveaux de monstres)
+<br/>- Les potions de Painthure ont été rajoutés (elles apportent +40 en explo)
+<br/>- La formule a été mise a jour : c'est celle de Dabihul postée <a href="http://www.mountyhall.com/Forum/display_topic_threads.php?ForumID=17&TopicID=128007&PagePosition=10">ici</a>
+<br/>- Si vous constatez des incohérances, me contacter par MP sur MH (Cageux - 92255)
+<br/>
+<br/>- "Potion mélangée" dans le menu déroulant est une potion qui porte ce nom. Exemple : Bonne bouffe + Glacier donne : Potion mélangée
+<br/>A ne pas confondre Potions Mélangées (au pluriel) qui signifie 2 potions de même nom mélangées ensemble
+<br/>
+<br><div align="center"><b><font size="6"><u>Utilisation</u> :</font></b></div><div align="center"><div style="background-color:#FFFCBE;border-width: 1px; border-style: solid; border-color: #000000;width:80%"><div style="margin:5 5 5 30;Text-align:left"><ol><li><b>Selectionner vos deux potions</b></li><li><b>Renseigner la Puissance</b></li><li><b>Cliquez sur calculer&nbsp; </b></li></ol></div><div style="margin:5 5 5 30;Text-align:left">--&gt; les champs ATT ESQ ... se remplissent automatiquement <br>--&gt; les case Painthure, Potion Mélangée ou Potion de Zone sont cochées automatiquement si il y a lieu <br>--&gt; <b>Pour les Painthures, indiquez dans la case LVL le niveau de votre Painthure</b> </div></div></div><br>
+<br/>
+<br/>
+<br/>
+<br/> <br><div align="center"><b><font size="6">Formule :</font></b></div><center><div style="background-color:#FFFCBE;border-width: 1px; border-style: solid; border-color: #000000;width:80%"><div style="margin:5 5 5 30;Text-align:left"><font size="4"><span style="background-color: rgb(255, 255, 153);"><b>&nbsp;<span style="background-color: rgb(255, 255, 204);">33</span></b></span><font color="#FF0000"> </font>(base) + <b><font color="#FF0000">[</font></b>(total <b>P1</b>+ total <b>P2</b>) + (<b>max durée P1 et P2</b>)<b><font color="#FF0000">]</font></b> + <b><font color="#FF0000">[</font>15</b> (par potion mélangées) + <b>40</b> (si au moins une zone) + <b>40</b> (si 1 Painthure/Toxine/Guerison et pas l'autre) - 15 (si <b>P1nom</b> = <b>P2nom</b>)<font color="#FF0000"><b>]</b></font> <b>-</b> <font color="#FF0000"><b>[</b></font>(<b>lvl monstre</b> + <b>qualité compo</b> (+4;+8;+12;+16;+20)<font color="#FF0000"><b>]</b></font></font></div></div></center><br>
+</quote>
+<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"><img src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></div><script>function getCookie(e){for(var t=e+"=",n=decodeURIComponent(document.cookie).split(";"),o=0;o<n.length;o++){for(var i=n[o];" "==i.charAt(0);)i=i.substring(1);if(0==i.indexOf(t))return i.substring(t.length,i.length)}return""}getCookie("hostinger")&&(document.cookie="hostinger=;expires=Thu, 01 Jan 1970 00:00:01 GMT;",location.reload());var notification=document.getElementsByClassName("notice notice-success is-dismissible"),hostingerLogo=document.getElementsByClassName("hlogo"),mainContent=document.getElementsByClassName("notice_content")[0],newList=["Powerful and Easy-To-Use Control Panel.","1-Click Auto Installer and 24/7 Live Support.","Free Domain, Email and SSL Bundle.","5x faster WordPress performance","Weekly Backups and Fast Response Time."];if(0<notification.length&&null!=mainContent){var googleFont=document.createElement("link");googleFontHref=document.createAttribute("href"),googleFontRel=document.createAttribute("rel"),googleFontHref.value="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600",googleFontRel.value="stylesheet",googleFont.setAttributeNode(googleFontHref),googleFont.setAttributeNode(googleFontRel);var css="@media only screen and (max-width: 768px) {.web-hosting-90-off-image-wrapper {position: absolute;} .notice_content {justify-content: center;} .web-hosting-90-off-image {opacity: 0.3;}} @media only screen and (min-width: 769px) {.notice_content {justify-content: space-between;} .web-hosting-90-off-image-wrapper {padding: 0 5%}} .content-wrapper {z-index: 5} .notice_content {display: flex; align-items: center;} * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .upgrade_button_red_sale{border: 0; border-radius: 3px; background-color: #ff123a !important; padding: 15px 55px !important; margin-left: 30px; font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: 600; color: #ffffff;} .upgrade_button_red_sale:hover{color: #ffffff !important; background: #d10303 !important;}",style=document.createElement("style"),sheet=window.document.styleSheets[0];style.styleSheet?style.styleSheet.cssText=css:style.appendChild(document.createTextNode(css)),document.getElementsByTagName("head")[0].appendChild(style),document.getElementsByTagName("head")[0].appendChild(googleFont);var button=document.getElementsByClassName("upgrade_button_red")[0],link=button.parentElement;link.setAttribute("href","https://www.hostinger.com/hosting-starter-offer?utm_source=000webhost&utm_medium=panel&utm_campaign=000-wp"),link.innerHTML='<button class="upgrade_button_red_sale">TRANSFER NOW</button>',(notification=notification[0]).setAttribute("style","padding-bottom: 10px; padding-top: 5px; background-image: url(https://cdn.000webhost.com/000webhost/promotions/springsale/mountains-neon-background.jpg); background-color: #000000; background-size: cover; background-repeat: no-repeat; color: #ffffff; border-color: #ff123a; border-width: 8px;"),notification.className="notice notice-error is-dismissible",(hostingerLogo=hostingerLogo[0]).setAttribute("src","https://cdn.000webhost.com/000webhost/promotions/springsale/logo-hostinger-white.svg"),hostingerLogo.setAttribute("style","float: none !important; height: auto; max-width: 100%; margin: 40px 20px 10px 30px;");var h1Tag=notification.getElementsByTagName("H1")[0];h1Tag.remove();var paragraph=notification.getElementsByTagName("p")[0];paragraph.innerHTML="Fast & Secure Web Hosting. <br>Limited time offer: get an SSL certificate for FREE",paragraph.setAttribute("style",'max-width: 600px; margin-left: 30px; font-family: "Open Sans", sans-serif; font-size: 22px; font-weight: 600;');var list=notification.getElementsByTagName("UL")[0];list.setAttribute("style","max-width: 675px;");for(var listElements=list.getElementsByTagName("LI"),i=0;i<newList.length;i++)listElements[i].setAttribute("style","color:#ffffff; list-style-type: disc; margin-left: 30px; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 300; line-height: 1.5;"),listElements[i].innerHTML=newList[i];listElements[listElements.length-1].remove();var org_html=mainContent.innerHTML,new_html='<div class="content-wrapper">'+mainContent.innerHTML+'</div><div class="web-hosting-90-off-image-wrapper"><img class="web-hosting-90-off-image" src="https://cdn.000webhost.com/000webhost/promotions/springsale/web-hosting-90-off.png"></div>';mainContent.innerHTML=new_html;var saleImage=mainContent.getElementsByClassName("web-hosting-90-off-image")[0];!function(){var t=document.querySelectorAll("body.wp-admin")[0];function e(){var e=document.createElement("iframe");e.id="hgr-promo-widget",e.setAttribute("src","https://www.hostinger.com/widgets/bottom-banner-sale/000_wp_admin"),e.setAttribute("allowfullscreen",!0),e.setAttribute("frameborder",0),e.style.cssText="z-index: 2147483000 !important;position: fixed !important;bottom: 0; width: 100%;!important; left: 0!important;",e.style.opacity=0,e.onload=function(){iFrameResize({},"#hgr-promo-widget"),e.style.opacity=1},t.insertAdjacentElement("afterend",e)}if(window.iFrameResize)e();else{var n=document.createElement("script");n.type="text/javascript",t.insertAdjacentElement("afterend",n),n.onload=e,n.src="https://unpkg.com/iframe-resizer@3.6.3/js/iframeResizer.min.js"}}()}</script></body>
+</html>
